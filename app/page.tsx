@@ -20,14 +20,14 @@ export default function Home() {
             <FeatureMediaCard
               title="Have fun with your friends and family."
               mediaType="video"
-              mediaSrc="/images/videos/226795_small.mp4"
+              mediaSrc="/images/videos/226795_compressed.mp4"
               buttonText="Find Your Friends"
               buttonHref="/find-friends"
             />
             <FeatureMediaCard
               title="Express yourself with millions of Lenses."
               mediaType="video"
-              mediaSrc="/images/videos/253998_small.mp4"
+              mediaSrc="/images/videos/253998_compressed.mp4"
               buttonText="Try Now"
               buttonHref="/lenses"
               isLensCard
@@ -35,7 +35,7 @@ export default function Home() {
             <FeatureMediaCard
               title="Watch exclusive content."
               mediaType="video"
-              mediaSrc="/images/videos/227567_small.mp4"
+              mediaSrc="/images/videos/227567_compressed.mp4"
               buttonText="Watch Now"
               buttonHref="/spotlight"
               className="md:col-span-2"
