@@ -24,7 +24,7 @@ export function NavBar({ activeTab }: NavBarProps) {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <div className="w-8 h-8 relative">
-              <Image src="/images/snapchat-logo.png" alt="Snapchat" fill className="object-contain" priority />
+              <Image src="/images/logo/snapchat-logo.png" alt="Snapchat" fill className="object-contain" priority />
             </div>
           </Link>
 
@@ -93,37 +93,37 @@ export function NavBar({ activeTab }: NavBarProps) {
             <div className="grid grid-cols-4 gap-4 mb-4">
               <MobileNavItem
                 href="/stories"
-                icon="/images/stories-icon.png"
+                icon="/images/logo/stories-icon.png"
                 label="Stories"
                 isActive={activeTab === "Stories"}
               />
               <MobileNavItem
                 href="/spotlight"
-                icon="/images/spotlight-icon.png"
+                icon="/images/logo/spotlight-icon.png"
                 label="Spotlight"
                 isActive={activeTab === "Spotlight"}
               />
               <MobileNavItem
                 href="/chat"
-                icon="/images/chat-icon.png"
+                icon="/images/logo/chat-icon.png"
                 label="Chat"
                 badge={3}
                 isActive={activeTab === "Chat"}
               />
               <MobileNavItem
                 href="/lenses"
-                icon="/images/lenses-icon.png"
+                icon="/images/logo/lenses-icon.png"
                 label="Lenses"
                 isActive={activeTab === "Lenses"}
               />
               <MobileNavItem
                 href="/plus"
-                icon="/images/plus-icon.png"
+                icon="/images/logo/plus-icon.png"
                 label="Snapchat+"
                 isActive={activeTab === "Snapchat+"}
               />
-              <MobileNavItem href="/profile" icon="/images/profile-icon.png" label="Profile" />
-              <MobileNavItem href="/settings" icon="/images/settings-icon.png" label="Settings" />
+              <MobileNavItem href="/profile" icon="/images/logo/profile-icon.png" label="Profile" />
+              <MobileNavItem href="/settings" icon="/images/logo/settings-icon.png" label="Settings" />
               <MobileNavItem href="/map" icon="/images/map-icon.png" label="Map" />
             </div>
 
