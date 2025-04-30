@@ -1,5 +1,7 @@
 # SnapChat Clone
 
+The app was deployed using Vercel: https://snap-chat-clone-iota.vercel.app/
+
 A modern SnapChat-inspired web application built with Next.js, React, Tailwind CSS, and Radix UI.
 
 ## Features
