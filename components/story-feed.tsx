@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import type { Story } from "@/types/story"
 import { StoryViewer } from "./story-viewer"
@@ -11,6 +11,7 @@ interface StoryFeedProps {
 
 export function StoryFeed({ stories }: StoryFeedProps) {
   const [activeStory, setActiveStory] = useState<Story | null>(null)
+  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({})
 
   const openStory = (story: Story) => {
     setActiveStory(story)
@@ -29,19 +30,43 @@ export function StoryFeed({ stories }: StoryFeedProps) {
           onClick={() => openStory(story)}
         >
           <div className="aspect-[9/16] relative">
-            <Image
-              src={story.thumbnail || "/placeholder.svg"}
-              alt={story.caption || "Story thumbnail"}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 600px"
-            />
+            {story.mediaType === "video" ? (
+              <video
+                ref={(el) => {
+                  videoRefs.current[story.id] = el
+                  return undefined
+                }}
+                src={story.mediaUrl}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <Image
+                src={story.thumbnail || "/placeholder.jpg"}
+                alt={story.caption || "Story thumbnail"}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+            )}
+
+            {/* Video indicator */}
+            {story.mediaType === "video" && (
+              <div className="absolute top-4 right-4 bg-black/50 p-1 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+            )}
 
             {/* Creator info */}
             <div className="absolute top-4 left-4 flex items-center gap-2">
               <div className="w-8 h-8 relative rounded-full overflow-hidden border-2 border-white">
                 <Image
-                  src={story.creator.avatar || "/placeholder.svg"}
+                  src={story.creator.avatar || "/placeholder.jpg"}
                   alt={story.creator.username}
                   fill
                   className="object-cover"

@@ -73,12 +73,14 @@ export function StoryViewer({ story, onClose }: StoryViewerProps) {
             src={story.mediaUrl}
             className="w-full h-full object-cover"
             autoPlay
-            muted={story.hasAudio ? false : true}
+            controls={false}
+            loop={false}
+            muted={!story.hasAudio}
             playsInline
           />
         ) : (
           <Image
-            src={story.mediaUrl || "/placeholder.svg"}
+            src={story.mediaUrl || "/placeholder.jpg"}
             alt={story.caption || "Story"}
             fill
             className="object-cover"

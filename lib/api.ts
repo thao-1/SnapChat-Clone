@@ -3,7 +3,7 @@ import type { SpotlightVideo } from "@/types/spotlight"
 import type { ChatContact, ChatMessage } from "@/types/chat"
 import type { Lens } from "@/types/lens"
 
-// Mock data for stories
+// Stories data using real videos
 const mockStories: { featured: Story[]; recommendations: Story[] } = {
   featured: [
     {
@@ -11,12 +11,12 @@ const mockStories: { featured: Story[]; recommendations: Story[] } = {
       creator: {
         id: "creator1",
         username: "john_doe",
-        avatar: "/images/avatars/john_doe.jpg",
+        avatar: "/placeholder-user.jpg",
       },
-      mediaType: "image",
-      mediaUrl: "/images/stories/story1.jpg",
-      thumbnail: "/images/stories/story1-thumb.jpg",
-      caption: "Exploring the city!",
+      mediaType: "video",
+      mediaUrl: "/images/stories/173530-849610807.mp4",
+      thumbnail: "/images/stories/173530-849610807.jpg",
+      caption: "Nature!",
       timeAgo: "2h",
     },
     {
@@ -24,12 +24,12 @@ const mockStories: { featured: Story[]; recommendations: Story[] } = {
       creator: {
         id: "creator2",
         username: "jane_smith",
-        avatar: "/images/avatars/jane_smith.jpg",
+        avatar: "/placeholder-user.jpg",
       },
       mediaType: "video",
-      mediaUrl: "/videos/slime-packing.mp4",
-      thumbnail: "/images/stories/story2-thumb.jpg",
-      caption: "Delicious food!",
+      mediaUrl: "/images/stories/186714-878826932.mp4",
+      thumbnail: "/images/stories/186714-878826932.jpg",
+      caption: "Sunset!",
       timeAgo: "1h",
       hasAudio: true,
     },
@@ -40,12 +40,12 @@ const mockStories: { featured: Story[]; recommendations: Story[] } = {
       creator: {
         id: "creator3",
         username: "alice_wonderland",
-        avatar: "/images/avatars/alice_wonderland.jpg",
+        avatar: "/placeholder-user.jpg",
         isOfficial: true,
       },
-      mediaType: "image",
-      mediaUrl: "/images/stories/story3.jpg",
-      thumbnail: "/images/stories/story3-thumb.jpg",
+      mediaType: "video",
+      mediaUrl: "/images/stories/206294.mp4",
+      thumbnail: "/images/stories/206294.jpg",
       caption: "New collection!",
       timeAgo: "30m",
     },
@@ -54,11 +54,11 @@ const mockStories: { featured: Story[]; recommendations: Story[] } = {
       creator: {
         id: "creator4",
         username: "bob_the_builder",
-        avatar: "/images/avatars/bob_the_builder.jpg",
+        avatar: "/placeholder-user.jpg",
       },
       mediaType: "video",
-      mediaUrl: "/videos/slime-packing.mp4",
-      thumbnail: "/images/stories/story4-thumb.jpg",
+      mediaUrl: "/images/stories/173530-849610807.mp4",
+      thumbnail: "/images/stories/173530-849610807.jpg",
       caption: "DIY project",
       timeAgo: "45m",
       hasAudio: true,
@@ -66,7 +66,7 @@ const mockStories: { featured: Story[]; recommendations: Story[] } = {
   ],
 }
 
-// Mock data for spotlight videos
+// Spotlight videos data using real videos
 const mockSpotlightVideos: { featured: SpotlightVideo; recommendations: SpotlightVideo[] } = {
   featured: {
     id: "spotlight1",
@@ -74,11 +74,11 @@ const mockSpotlightVideos: { featured: SpotlightVideo; recommendations: Spotligh
       id: "creator5",
       username: "emma_watson",
       displayName: "Emma Watson",
-      avatar: "/images/avatars/emma_watson.jpg",
-      snapcode: "/images/snapcodes/emma_watson.png",
+      avatar: "/placeholder-user.jpg",
+      snapcode: "/placeholder.svg",
     },
-    videoUrl: "/videos/slime-packing.mp4",
-    thumbnail: "/images/spotlight/spotlight1-thumb.jpg",
+    videoUrl: "/images/videos/226795_small.mp4",
+    thumbnail: "/placeholder.jpg",
     caption: "Behind the scenes!",
     likes: 12345,
     shares: 678,
@@ -88,7 +88,7 @@ const mockSpotlightVideos: { featured: SpotlightVideo; recommendations: Spotligh
       id: "music1",
       title: "Awesome Song",
       artist: "Cool Artist",
-      coverArt: "/images/music/music1.jpg",
+      coverArt: "/placeholder.jpg",
     },
   },
   recommendations: [
@@ -98,56 +98,57 @@ const mockSpotlightVideos: { featured: SpotlightVideo; recommendations: Spotligh
         id: "creator6",
         username: "tom_hanks",
         displayName: "Tom Hanks",
-        avatar: "/images/avatars/tom_hanks.jpg",
-        snapcode: "/images/snapcodes/tom_hanks.png",
+        avatar: "/placeholder-user.jpg",
+        snapcode: "/placeholder.svg",
       },
-      videoUrl: "/videos/slime-packing.mp4",
-      thumbnail: "/images/spotlight/spotlight2-thumb.jpg",
-      caption: "Fun times!",
-      likes: 54321,
-      shares: 321,
-      comments: 12,
-      duration: "0:15",
+      videoUrl: "/images/videos/227567_small.mp4",
+      thumbnail: "/placeholder.jpg",
+      caption: "New movie trailer",
+      likes: 9876,
+      shares: 543,
+      comments: 21,
+      duration: "0:45",
       music: {
         id: "music2",
-        title: "Another Great Song",
-        artist: "Amazing Artist",
-        coverArt: "/images/music/music2.jpg",
+        title: "Default Music",
+        artist: "Unknown Artist",
+        coverArt: "/placeholder.jpg",
       },
     },
     {
       id: "spotlight3",
       creator: {
         id: "creator7",
-        username: "scarlett_johansson",
-        displayName: "Scarlett Johansson",
-        avatar: "/images/avatars/scarlett_johansson.jpg",
-        snapcode: "/images/snapcodes/scarlett_johansson.png",
+        username: "taylor_swift",
+        displayName: "Taylor Swift",
+        avatar: "/placeholder-user.jpg",
+        snapcode: "/placeholder.svg",
+        isOfficial: true,
       },
-      videoUrl: "/videos/slime-packing.mp4",
-      thumbnail: "/images/spotlight/spotlight3-thumb.jpg",
-      caption: "Making memories!",
-      likes: 9876,
-      shares: 765,
-      comments: 54,
-      duration: "0:20",
+      videoUrl: "/images/videos/253998_small.mp4",
+      thumbnail: "/placeholder.jpg",
+      caption: "New song teaser",
+      likes: 54321,
+      shares: 1234,
+      comments: 567,
+      duration: "0:15",
       music: {
         id: "music3",
-        title: "Catchy Tune",
-        artist: "Popular Artist",
-        coverArt: "/images/music/music3.jpg",
+        title: "New Hit",
+        artist: "Taylor Swift",
+        coverArt: "/placeholder.jpg",
       },
     },
   ],
 }
 
-// Mock data for chat contacts
+// Mock chat data
 const mockChatContacts: ChatContact[] = [
   {
     id: "contact1",
-    username: "alice123",
-    displayName: "Alice",
-    avatar: "/images/avatars/alice_wonderland.jpg",
+    username: "alex_johnson",
+    displayName: "Alex Johnson",
+    avatar: "/placeholder-user.jpg",
     isOnline: true,
     lastMessage: "Hey, how's it going?",
     lastMessageTime: "10:30 AM",
@@ -155,17 +156,27 @@ const mockChatContacts: ChatContact[] = [
   },
   {
     id: "contact2",
-    username: "bob456",
-    displayName: "Bob",
-    avatar: "/images/avatars/bob_the_builder.jpg",
+    username: "sarah_williams",
+    displayName: "Sarah Williams",
+    avatar: "/placeholder-user.jpg",
     isOnline: false,
-    lastMessage: "See you later!",
+    lastMessage: "Check out this snap!",
     lastMessageTime: "Yesterday",
     hasUnreadMessage: false,
   },
+  {
+    id: "contact3",
+    username: "mike_brown",
+    displayName: "Mike Brown",
+    avatar: "/placeholder-user.jpg",
+    isOnline: true,
+    lastMessage: "Are we still meeting today?",
+    lastMessageTime: "2:15 PM",
+    hasUnreadMessage: true,
+  },
 ]
 
-// Mock data for chat messages
+// Mock chat messages
 const mockChatMessages: { [contactId: string]: ChatMessage[] } = {
   contact1: [
     {
@@ -173,8 +184,8 @@ const mockChatMessages: { [contactId: string]: ChatMessage[] } = {
       senderId: "me",
       receiverId: "contact1",
       type: "text",
-      content: "Hey Alice!",
-      time: "10:29 AM",
+      content: "Hey Alex! How are you?",
+      time: "10:15 AM",
       isSentByMe: true,
       isRead: true,
     },
@@ -183,190 +194,180 @@ const mockChatMessages: { [contactId: string]: ChatMessage[] } = {
       senderId: "contact1",
       receiverId: "me",
       type: "text",
-      content: "Hey, how's it going?",
+      content: "I'm good! Just checking out the new Snapchat features.",
+      time: "10:20 AM",
+      isSentByMe: false,
+      isRead: true,
+    },
+    {
+      id: "message3",
+      senderId: "contact1",
+      receiverId: "me",
+      type: "text",
+      content: "Have you tried the new lenses?",
+      time: "10:22 AM",
+      isSentByMe: false,
+      isRead: true,
+    },
+    {
+      id: "message4",
+      senderId: "me",
+      receiverId: "contact1",
+      type: "text",
+      content: "Not yet! Are they cool?",
+      time: "10:25 AM",
+      isSentByMe: true,
+      isRead: false,
+    },
+    {
+      id: "message5",
+      senderId: "contact1",
+      receiverId: "me",
+      type: "text",
+      content: "Yeah, they're awesome! You should check them out.",
       time: "10:30 AM",
       isSentByMe: false,
       isRead: true,
     },
   ],
-  contact2: [
+}
+
+// Mock lenses data
+const mockLenses: { popular: Lens[]; trending: Lens[] } = {
+  popular: [
     {
-      id: "message3",
-      senderId: "me",
-      receiverId: "contact2",
-      type: "text",
-      content: "Bye Bob!",
-      time: "Yesterday",
-      isSentByMe: true,
-      isRead: true,
+      id: "lens1",
+      name: "Clone Yourself",
+      creator: "Snapchat",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Fun",
     },
     {
-      id: "message4",
-      senderId: "contact2",
-      receiverId: "me",
-      type: "text",
-      content: "See you later!",
-      time: "Yesterday",
-      isSentByMe: false,
-      isRead: true,
+      id: "lens2",
+      name: "Glow Effect",
+      creator: "Lens Studio",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Beauty",
+    },
+    {
+      id: "lens3",
+      name: "Green Screen",
+      creator: "Snapchat",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Creative",
+    },
+  ],
+  trending: [
+    {
+      id: "lens4",
+      name: "Portrait Blur",
+      creator: "Snapchat",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Beauty",
+    },
+    {
+      id: "lens5",
+      name: "Snow Dog",
+      creator: "Lens Creator",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Animals",
+    },
+    {
+      id: "lens6",
+      name: "Serum",
+      creator: "Beauty Inc",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Beauty",
+    },
+    {
+      id: "lens7",
+      name: "Soft Vide",
+      creator: "Film Studio",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Creative",
+    },
+    {
+      id: "lens8",
+      name: "Light",
+      creator: "Photo Pro",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Photography",
+    },
+    {
+      id: "lens9",
+      name: "Loop Me",
+      creator: "Video Creator",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Fun",
+    },
+    {
+      id: "lens10",
+      name: "Memo",
+      creator: "Snapchat",
+      imageUrl: "/placeholder.jpg",
+      gifUrl: "/placeholder.jpg",
+      iconUrl: "/placeholder.jpg",
+      category: "Utility",
     },
   ],
 }
 
-// Mock data for popular lenses
-const mockPopularLenses: Lens[] = [
-  {
-    id: "lens1",
-    name: "Soft Vide Lens",
-    creator: "فلتر للمشاهير",
-    imageUrl: "/images/lenses/soft-vide.jpg",
-    gifUrl: "/images/lenses/soft-vide.gif",
-    iconUrl: "/images/lenses/icons/soft-vide.jpg",
-    category: "face",
-  },
-  {
-    id: "lens2",
-    name: "SERUM Lens",
-    creator: "Nasser Mohamed",
-    imageUrl: "/images/lenses/serum.jpg",
-    gifUrl: "/images/lenses/serum.gif",
-    iconUrl: "/images/lenses/icons/serum.jpg",
-    category: "face",
-  },
-  {
-    id: "lens3",
-    name: "Light Lens",
-    creator: "Snapchat",
-    imageUrl: "/images/lenses/light.jpg",
-    gifUrl: "/images/lenses/light.gif",
-    iconUrl: "/images/lenses/icons/light.jpg",
-    category: "face",
-  },
-  {
-    id: "lens4",
-    name: "Snow White Dog Lens",
-    creator: "Snapchat",
-    imageUrl: "/images/lenses/snow-dog.jpg",
-    gifUrl: "/images/lenses/snow-dog.gif",
-    iconUrl: "/images/lenses/icons/snow-dog.jpg",
-    category: "face",
-  },
-  {
-    id: "lens5",
-    name: "Green Screen Video",
-    creator: "Snapchat",
-    imageUrl: "/images/lenses/green-screen.jpg",
-    gifUrl: "/images/lenses/green-screen.gif",
-    iconUrl: "/images/lenses/icons/green-screen.jpg",
-    category: "world",
-  },
-]
-
-// Mock data for trending lenses
-const mockTrendingLenses: Lens[] = [
-  {
-    id: "lens6",
-    name: "Portrait Blur V3 Lens",
-    creator: "DK 🦋",
-    imageUrl: "/images/lenses/portrait-blur.jpg",
-    gifUrl: "/images/lenses/portrait-blur.gif",
-    iconUrl: "/images/lenses/icons/portrait-blur.jpg",
-    category: "face",
-  },
-  {
-    id: "lens7",
-    name: "Clone Yourself Lens",
-    creator: "SirQu3ntin",
-    imageUrl: "/images/lenses/clone-yourself.jpg",
-    gifUrl: "/images/lenses/clone-yourself.gif",
-    iconUrl: "/images/lenses/icons/clone-yourself.jpg",
-    category: "world",
-  },
-  {
-    id: "lens8",
-    name: "Loop Me Lens",
-    creator: "Yisus",
-    imageUrl: "/images/lenses/loop-me.jpg",
-    gifUrl: "/images/lenses/loop-me.gif",
-    iconUrl: "/images/lenses/icons/loop-me.jpg",
-    category: "face",
-  },
-  {
-    id: "lens9",
-    name: "Glow Effect with Makeup Lens",
-    creator: "Snapchat",
-    imageUrl: "/images/lenses/glow-effect.jpg",
-    gifUrl: "/images/lenses/glow-effect.gif",
-    iconUrl: "/images/lenses/icons/glow-effect.jpg",
-    category: "face",
-  },
-  {
-    id: "lens10",
-    name: "memo Lens",
-    creator: "Millat Shaban 🖤",
-    imageUrl: "/images/lenses/memo.jpg",
-    gifUrl: "/images/lenses/memo.gif",
-    iconUrl: "/images/lenses/icons/memo.jpg",
-    category: "face",
-  },
-]
-
 // Function to simulate fetching stories
 export async function fetchStories() {
-  // In a real app, this would be an API call
-  return new Promise<{ featured: Story[]; recommendations: Story[] }>((resolve) => {
-    setTimeout(() => {
-      resolve(mockStories)
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockStories
 }
 
 // Function to simulate fetching spotlight videos
 export async function fetchSpotlightVideos() {
-  // In a real app, this would be an API call
-  return new Promise<{ featured: SpotlightVideo; recommendations: SpotlightVideo[] }>((resolve) => {
-    setTimeout(() => {
-      resolve(mockSpotlightVideos)
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockSpotlightVideos
 }
 
 // Function to simulate fetching chat contacts
 export async function fetchChatContacts() {
-  // In a real app, this would be an API call
-  return new Promise<ChatContact[]>((resolve) => {
-    setTimeout(() => {
-      resolve(mockChatContacts)
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockChatContacts
 }
 
 // Function to simulate fetching chat messages
 export async function fetchChatMessages(contactId: string) {
-  // In a real app, this would be an API call
-  return new Promise<ChatMessage[]>((resolve) => {
-    setTimeout(() => {
-      resolve(mockChatMessages[contactId] || [])
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockChatMessages[contactId] || []
 }
 
 // Function to simulate fetching popular lenses
 export async function fetchPopularLenses() {
-  // In a real app, this would be an API call
-  return new Promise<Lens[]>((resolve) => {
-    setTimeout(() => {
-      resolve(mockPopularLenses)
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockLenses.popular
 }
 
 // Function to simulate fetching trending lenses
 export async function fetchTrendingLenses() {
-  // In a real app, this would be an API call
-  return new Promise<Lens[]>((resolve) => {
-    setTimeout(() => {
-      resolve(mockTrendingLenses)
-    }, 500)
-  })
+  // Simulate API call delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+  return mockLenses.trending
 }

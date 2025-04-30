@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { Camera, X, Zap, Download, RefreshCw, Clock, Smile } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useMobile } from "@/hooks/use-mobile"
+import { useIsMobile } from "@/components/ui/use-mobile"
 
 interface CameraInterfaceProps {
   onPhotoCapture: (photo: string) => void
@@ -19,7 +19,7 @@ export function CameraInterface({ onPhotoCapture, onClose }: CameraInterfaceProp
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const streamRef = useRef<MediaStream | null>(null)
-  const isMobile = useMobile()
+  const isMobile = useIsMobile()
 
   // Request camera permission and setup video stream
   useEffect(() => {

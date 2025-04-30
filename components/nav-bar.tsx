@@ -5,14 +5,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { Search, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useMobile } from "@/hooks/use-mobile"
+import { useIsMobile } from "@/components/ui/use-mobile"
 
 interface NavBarProps {
   activeTab?: string
 }
 
 export function NavBar({ activeTab }: NavBarProps) {
-  const isMobile = useMobile()
+  const isMobile = useIsMobile()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -46,19 +46,19 @@ export function NavBar({ activeTab }: NavBarProps) {
           <nav className="hidden md:flex items-center space-x-8">
             <NavItem
               href="/stories"
-              icon="/images/stories-icon.png"
+              icon="/images/logo/stories-icon.png"
               label="Stories"
               isActive={activeTab === "Stories"}
             />
             <NavItem
               href="/spotlight"
-              icon="/images/spotlight-icon.png"
+              icon="/images/logo/spotlight-icon.png"
               label="Spotlight"
               isActive={activeTab === "Spotlight"}
             />
-            <NavItem href="/chat" icon="/images/chat-icon.png" label="Chat" badge={3} isActive={activeTab === "Chat"} />
-            <NavItem href="/lenses" icon="/images/lenses-icon.png" label="Lenses" isActive={activeTab === "Lenses"} />
-            <NavItem href="/plus" icon="/images/plus-icon.png" label="Snapchat+" isActive={activeTab === "Snapchat+"} />
+            <NavItem href="/chat" icon="/images/logo/chat-icon.png" label="Chat" badge={3} isActive={activeTab === "Chat"} />
+            <NavItem href="/lenses" icon="/images/logo/lenses-icon.png" label="Lenses" isActive={activeTab === "Lenses"} />
+            <NavItem href="/plus" icon="/images/logo/plus-icon.png" label="Snapchat+" isActive={activeTab === "Snapchat+"} />
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -124,7 +124,7 @@ export function NavBar({ activeTab }: NavBarProps) {
               />
               <MobileNavItem href="/profile" icon="/images/logo/profile-icon.png" label="Profile" />
               <MobileNavItem href="/settings" icon="/images/logo/settings-icon.png" label="Settings" />
-              <MobileNavItem href="/map" icon="/images/map-icon.png" label="Map" />
+              <MobileNavItem href="/map" icon="/images/logo/map-icon.png" label="Map" />
             </div>
 
             {/* Mobile CTA Buttons */}

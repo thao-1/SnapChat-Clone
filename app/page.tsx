@@ -1,7 +1,7 @@
 import { LoginForm } from "@/components/login-form"
 import { NavBar } from "@/components/nav-bar"
-import { FeatureCard } from "@/components/feature-card"
 import { ParentFooter } from "@/components/parent-footer"
+import { FeatureMediaCard } from "@/components/feature-media-card"
 
 export default function Home() {
   return (
@@ -17,22 +17,25 @@ export default function Home() {
 
           {/* Right Column - Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <FeatureCard
+            <FeatureMediaCard
               title="Have fun with your friends and family."
-              imageSrc="/images/friends-feature.png"
+              mediaType="video"
+              mediaSrc="/images/videos/226795_small.mp4"
               buttonText="Find Your Friends"
               buttonHref="/find-friends"
             />
-            <FeatureCard
+            <FeatureMediaCard
               title="Express yourself with millions of Lenses."
-              imageSrc="/images/lenses-feature.png"
+              mediaType="video"
+              mediaSrc="/images/videos/253998_small.mp4"
               buttonText="Try Now"
               buttonHref="/lenses"
               isLensCard
             />
-            <FeatureCard
+            <FeatureMediaCard
               title="Watch exclusive content."
-              imageSrc="/images/content-feature.png"
+              mediaType="video"
+              mediaSrc="/images/videos/227567_small.mp4"
               buttonText="Watch Now"
               buttonHref="/spotlight"
               className="md:col-span-2"
