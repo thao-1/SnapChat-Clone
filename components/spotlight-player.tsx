@@ -10,7 +10,7 @@ interface SpotlightPlayerProps {
 }
 
 export function SpotlightPlayer({ video }: SpotlightPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true)
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -25,6 +25,12 @@ export function SpotlightPlayer({ video }: SpotlightPlayerProps) {
 
       const handleLoadedMetadata = () => {
         setDuration(video.duration)
+        // Start playing automatically when metadata is loaded
+        video.play()
+          .catch(error => {
+            console.log('Autoplay prevented:', error)
+            setIsPlaying(false)
+          })
       }
 
       video.addEventListener("timeupdate", handleTimeUpdate)
@@ -64,6 +70,9 @@ export function SpotlightPlayer({ video }: SpotlightPlayerProps) {
           poster={video.thumbnail}
           className="w-full h-full object-cover"
           playsInline
+          autoPlay
+          muted
+          loop
           onClick={togglePlayPause}
         />
 
