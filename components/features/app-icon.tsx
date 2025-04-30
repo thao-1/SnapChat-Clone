@@ -6,8 +6,8 @@ export function AppIcon() {
       <div className="w-16 h-16 relative mr-4 flex-shrink-0">
         <div className="bg-white rounded-xl w-full h-full flex items-center justify-center">
           <Image
-            src="/images/snapchat-icon.png"
-            alt="Snapchat Icon"
+            src="/images/plus/app-icon.png"
+            alt="App Icon"
             width={40}
             height={40}
             className="object-contain"
